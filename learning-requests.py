@@ -13,4 +13,5 @@ for child in soup.descendants:
     if child.name:  #what why is this needed
         print(child.name)
 
-
+for tag in soup.find_all('li'):
+    print(tag.text)   
