@@ -14,4 +14,4 @@ for child in soup.descendants:
         print(child.name)
 
 for tag in soup.find_all('li'):
-    print(tag.text)   
+    print(tag.text)     
