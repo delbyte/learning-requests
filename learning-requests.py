@@ -2,11 +2,15 @@ from PIL import Image
 from io import BytesIO
 
 import requests
-import bs4
+from bs4 import BeautifulSoup
 
 r = requests.get("https://en.wikipedia.org/wiki/Bean")
-i = Image.open(BytesIO(r.content))
 
 
-print(r.content)
+soup = BeautifulSoup(r.text, 'html.parser')
+
+for child in soup.descendants:
+    if child.name:  #what why is this needed
+        print(child.name)
+
 
